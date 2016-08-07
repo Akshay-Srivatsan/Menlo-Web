@@ -1,0 +1,11 @@
+{
+    "name": "Menlo School",
+    "gcm_sender_id": "353688736516",
+    "icons": [{
+        "src": "menlo.jpg",
+        "type": "image/jpeg",
+        "sizes": "512x512"
+    }],
+    "start_url": "index.html",
+    "display": "standalone"
+}
