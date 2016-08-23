@@ -10,7 +10,8 @@ function submit_post(title, topic, text, linkTitle, url) {
         topic: topic,
         text: text,
         link_title: linkTitle,
-        url: url
+        url: url,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
     }, function() {
         display_posts();
         $('dialog#new-post-dialog').get(0).close();

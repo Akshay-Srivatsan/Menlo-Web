@@ -5,7 +5,8 @@ function submit_suggestion(title, text) {
     database_push('suggestions', {
         title: title,
         text: text,
-        author: current_user.id
+        author: current_user.id,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
     }, function() {
         display_suggestions();
         $('dialog#new-suggestion-dialog').get(0).close();
@@ -46,9 +47,10 @@ function upvote_suggestion(id) {
 }
 
 function downvote_suggestion(id) {
-    database_set('suggestions/' + id + '/votes/' + current_user.id, -1, function() {
-        display_suggestions();
-    });
+    database_set('suggestions/' + id + '/votes/' + current_user.id, -1,
+        function() {
+            display_suggestions();
+        });
 }
 
 function novote_suggestion(id) {
