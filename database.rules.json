@@ -16,6 +16,7 @@
 
                 "votes": {
                     "$uid": {
+                        ".write": "auth.uid == $uid",
                         ".validate": "auth.uid == $uid && newData.isNumber() && (newData.val() == -1 || newData.val() == 1)"
                     }
                 }
