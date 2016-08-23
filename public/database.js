@@ -95,7 +95,7 @@ function verify_permissions() {
         if (!authorized_users_for_topic) {
             return;
         }
-        if (authorized_users_for_topic[user.uid]) {
+        if (authorized_users_for_topic[current_user.uid]) {
             console.log("Authorized for Topic: ", topic);
             authorized_topics.push(topic);
             can_compose_posts = true;

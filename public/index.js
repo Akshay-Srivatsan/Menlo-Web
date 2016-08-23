@@ -1,6 +1,6 @@
-var posts_count = 1;
+var posts_count = 50;
 var number_of_posts_loaded = 0;
-var posts_load_amount = 1;
+var posts_load_amount = 50;
 
 var suggestions_count = 50;
 var number_of_suggestions_loaded = 0;
