@@ -15,6 +15,7 @@ function submit_post(title, topic, text, linkTitle, url) {
     }, function() {
         display_posts();
         $('dialog#new-post-dialog').get(0).close();
+        update_notifications();
         // reload();
     });
 }

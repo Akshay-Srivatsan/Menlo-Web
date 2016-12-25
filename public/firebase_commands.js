@@ -10,7 +10,9 @@ function database_get(location, callback) {
 
 function database_get_limited_to_last(location, amount, callback) {
     $.ajax({
-        url: dbURL + '/' + location + '.json?auth=' + current_user.credentials + '&limitToLast=' + encodeURIComponent(amount) + '&orderBy="$key"',
+        url: dbURL + '/' + location + '.json?auth=' + current_user.credentials +
+            '&limitToLast=' + encodeURIComponent(amount) +
+            '&orderBy="$key"',
         type: 'GET',
         success: callback
     });
@@ -50,4 +52,12 @@ function database_delete(location, callback) {
         type: 'DELETE',
         success: callback
     });
+}
+
+function update_notifications(callback) {
+    $.ajax({
+        url: 'https://worker-aws-us-east-1.iron.io:443/2/projects/585c42c96bf1240007897ea4/tasks/webhook?code_name=Menlo+Student+Council+App&oauth=aTjV26fX2WbiFXDAr1wW',
+        type: 'POST',
+        success: callback
+    })
 }

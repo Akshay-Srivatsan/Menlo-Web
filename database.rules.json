@@ -1,6 +1,6 @@
 {
     "rules": {
-        ".read": "auth != null",
+        ".read": "true",
 
         "posts": {
             "$post_id": {
@@ -11,7 +11,7 @@
 
         "suggestions": {
             "$suggestion_id": {
-                ".write": "((newData.child('author').val() == auth.uid) || (data.child('author').val() == auth.uid)) && (!data.exists() || !newData.exists() || data.child('author').val() == newData.child('author').val())",
+                ".write": "((root.child('admin').child(auth.uid).val() == true) || (newData.child('author').val() == auth.uid) || (data.child('author').val() == auth.uid)) && (!data.exists() || !newData.exists() || data.child('author').val() == newData.child('author').val())",
                 ".validate": "newData.hasChildren(['title', 'text', 'author']) && root.child('users').hasChild(newData.child('author').val())",
 
                 "votes": {
